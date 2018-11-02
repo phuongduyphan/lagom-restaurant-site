@@ -24,4 +24,24 @@ module.exports = {
       throw err;
     }
   },
+  async reservation_get(req, res) {
+    let { reservationId } = req.params;
+    try {
+      const connection = await db.getConnection();
+      const reservationUserInfoPacket = await connection.query(queryStatement.selectReservationWithUser, reservationId);
+      
+      const reservationUserInfoDb = (JSON.parse(JSON.stringify(reservationUserInfoPacket)))[0];
+      
+      const userInfo = db.getAPIObject(reservationUserInfoDb, db.category.user);
+      const reservationInfo = db.getAPIObject(reservationUserInfoDb, db.category.reservation);
+
+      const returnedData = {
+        userInfo,
+        reservationInfo
+      };
+      res.send(returnedData);
+    } catch (err) {
+      throw err;
+    }
+  },
 }
