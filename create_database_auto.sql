@@ -14,7 +14,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema mis-restaurant
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mis-restaurant` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `mis-restaurant` DEFAULT CHARACTER SET latin1 ;
 USE `mis-restaurant` ;
 
 -- -----------------------------------------------------
@@ -25,10 +25,11 @@ CREATE TABLE IF NOT EXISTS `mis-restaurant`.`dish` (
   `dish_name` VARCHAR(100) NOT NULL,
   `dish_description` VARCHAR(255) NULL DEFAULT NULL,
   `dish_image_path` VARCHAR(255) NULL DEFAULT NULL,
-  `dish_status` ENUM('available', 'unavailable') NULL DEFAULT NULL,
+  `dish_status` ENUM('available', 'unavailable') NOT NULL DEFAULT 'available',
   PRIMARY KEY (`dish_id`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -41,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `mis-restaurant`.`user` (
   `user_address` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`user_id`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -59,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `mis-restaurant`.`order` (
     REFERENCES `mis-restaurant`.`user` (`user_id`)
     ON DELETE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -79,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `mis-restaurant`.`order_contains` (
     REFERENCES `mis-restaurant`.`dish` (`dish_id`)
     ON DELETE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -99,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `mis-restaurant`.`reservation` (
     REFERENCES `mis-restaurant`.`user` (`user_id`)
     ON DELETE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+DEFAULT CHARACTER SET = latin1;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
