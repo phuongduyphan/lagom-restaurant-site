@@ -1,3 +1,5 @@
+create schema `mis-restaurant`;
+
 use `mis-restaurant`;
 
 create table `user` (
@@ -13,7 +15,7 @@ create table `dish` (
 	`dish_name` varchar(100) not null,
     `dish_description` varchar(255),
     `dish_image_path` varchar(255),
-    `dish_status` enum('available', 'unavailable'),
+    `dish_status` enum('available', 'unavailable') not null default 'available',
     primary key (`dish_id`)
 );
 
@@ -46,7 +48,7 @@ create table `reservation` (
     `reservation_date` date not null,
     `expected_arrival_time` time not null,
     `number_of_guests` int(11) not null,
-    `status` enum('pending', 'confirmed', 'declined'),
+    `reservation_status` enum('pending', 'confirmed', 'declined') not null default 'pending',
     primary key (`reservation_id`),
     foreign key (`user_id`)
 		references `user` (`user_id`)

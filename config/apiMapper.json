@@ -1,0 +1,80 @@
+{
+  "dish": {
+    "value": "dish",
+    "dish_id": {
+      "value": "dishId"
+    },
+    "dish_name": {
+      "value": "dishName"
+    },
+    "dish_description": {
+      "value": "dishDescription"
+    },
+    "dish_image_path": {
+      "value": "dishImagePath"
+    },
+    "dish_status": {
+      "value": "dishStatus"
+    }
+  },
+  "order": {
+    "value": "order",
+    "order_id": {
+      "value": "orderId"
+    },
+    "user_id": {
+      "value": "userId"
+    },
+    "order_creation_time": {
+      "value": "orderCreationTime"
+    },
+    "order_status": {
+      "value": "orderStatus"
+    }
+  },
+  "orderContains": {
+    "value": "orderContains",
+    "order_id": {
+      "value": "orderId"
+    },
+    "dish_id": {
+      "value": "dishId"
+    }
+  },
+  "reservation": {
+    "value": "reservation",
+    "reservation_id": {
+      "value": "reservationId"
+    },
+    "user_id": {
+      "value": "userId"
+    },
+    "reservation_date": {
+      "value": "reservationDate"
+    },
+    "expected_arrival_time": {
+      "value": "expectedArrivalTime"
+    },
+    "number_of_guests": {
+      "value": "numberOfGuests"
+    },
+    "reservation_status": {
+      "value": "reservationStatus"
+    }
+  },
+  "user": {
+    "value": "user",
+    "user_id": {
+      "value": "userId"
+    },
+    "user_full_name": {
+      "value": "userFullName"
+    },
+    "user_phone_number": {
+      "value": "userPhoneNumber"
+    },
+    "user_address": {
+      "value": "userAddress"
+    }
+  }
+}
