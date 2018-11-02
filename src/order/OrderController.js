@@ -10,9 +10,9 @@ module.exports = {
       try {
         await connection.beginTransaction();
         const userDb = db.getDbObject(order, db.category.user);
-        const resultUserQuery = await connection.query(queryStatement.insertQuery, ['user', userDb]);
+        const resultUserQuery = await connection.query(queryStatement.insertQuery, [db.schema.user, userDb]);
         const userId = resultUserQuery.insertId;
-        const resultOrderQuery = await connection.query(queryStatement.insertQuery,['order', { user_id: userId }]);
+        const resultOrderQuery = await connection.query(queryStatement.insertQuery,[db.schema.order, { user_id: userId }]);
         const orderId = resultOrderQuery.insertId;
         for (let i = 0; i < order.listOfDishes.length; i++) {
           const orderContains = {
@@ -20,7 +20,7 @@ module.exports = {
             dishId: order.listOfDishes[i].dishId
           };
           const orderContainsDb = db.getDbObject(orderContains, db.category.orderContains);
-          await connection.query(queryStatement.insertQuery, ['order_contains', orderContainsDb]);
+          await connection.query(queryStatement.insertQuery, [db.schema.orderContains, orderContainsDb]);
         };
         await connection.commit();
         res.sendStatus(200);

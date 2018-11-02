@@ -1,17 +1,20 @@
 const mysql = require('promise-mysql');
-const fs = require('fs');
+const Promise = require('bluebird');
+const fs = Promise.promisifyAll(require('fs'));
 
 let dbMapper;
 let apiMapper;
+let schema;
 
-fs.readFile('./config/dbMapper.json', 'utf8', (err, data) => {
-  if (err) throw err;
-  dbMapper = JSON.parse(data);
-});
+const dbMapperPromise = fs.readFileAsync('./config/dbMapper.json');
+const apiMapperPromise = fs.readFileAsync('./config/apiMapper.json', 'utf8');
+const mysqlSchemaPromise = fs.readFileAsync('./config/mysqlSchema.json', 'utf8');
 
-fs.readFile('./config/apiMapper.json', 'utf8', (err, data) => {
-  if (err) throw err;
-  apiMapper = JSON.parse(data);
+Promise.all([dbMapperPromise, apiMapperPromise, mysqlSchemaPromise]).then(results => {
+  dbMapper = JSON.parse(results[0]);
+  apiMapper = JSON.parse(results[1]);
+  schema = JSON.parse(results[2]);
+  module.exports.schema = schema;
 });
 
 function mapToObj(obj, mapper) {
