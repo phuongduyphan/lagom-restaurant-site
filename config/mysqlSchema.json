@@ -1,0 +1,7 @@
+{
+  "dish": "dish",
+  "order": "order",
+  "orderContains": "order_contains",
+  "reservation": "reservation",
+  "user": "user"
+}
