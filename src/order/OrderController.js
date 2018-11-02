@@ -57,5 +57,17 @@ module.exports = {
 		} catch (err) {
      throw err;
     }
-	},	
+  },
+  async order_status_put(req, res) {
+    const { orderId } = req.params;
+    const { order } = req.body;
+    try {
+      const connection = await db.getConnection();
+      const orderDb = db.getDbObject(order, db.category.order);
+      await connection.query(queryStatement.updateOrderStatus, [orderDb, orderId]);
+      res.sendStatus(200);
+    } catch (err) {
+      throw err;
+    }
+  },	
 };

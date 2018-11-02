@@ -44,4 +44,16 @@ module.exports = {
       throw err;
     }
   },
+  async reservation_status_put(req, res) {
+    const { reservationId } = req.params;
+    const { reservation } = req.body;
+    try {
+      const connection = await db.getConnection();
+      const reservationDb = db.getDbObject(reservation, db.category.reservation);
+      await connection.query(queryStatement.updateReservationStatus, [reservationDb, reservationId]);
+      res.sendStatus(200);
+    } catch (err) {
+      throw err;
+    }
+  },
 }
