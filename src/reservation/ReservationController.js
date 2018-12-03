@@ -2,6 +2,41 @@ const db = require('../../config/mysql-config');
 const queryStatement = require('./ReservationSqlStatements');
 
 module.exports = {
+  async reservation_pending_get(req, res) {
+    try {
+      const connection = await db.getConnection();
+      const result = await connection.query(queryStatement.selectPendingReservationWithUser);
+      const userInfo = db.getAPIObject(result[0], db.category.user);
+      const reservationInfo = db.getAPIObject(result[0], db.category.reservation);
+      res.send({
+        userInfo,
+        reservationInfo
+      });
+    } catch (err) {
+       throw err;
+    }
+  },
+
+  async reservation_confirmed_get(req, res) {
+    try {
+      const connection = await db.getConnection();
+      const result = await connection.query(queryStatement.selectConfirmedReservationWithUser);
+      res.send(result);
+    } catch (err) {
+       throw err;
+    }
+  },
+
+  async reservation_declined_get(req, res) {
+    try {
+      const connection = await db.getConnection();
+      const result = await connection.query(queryStatement.selectDeclinedReservationWithUser);
+      res.send(result);
+    } catch (err) {
+       throw err;
+    }
+  },
+
   async reservation_post(req, res) {
     let { reservation } = req.body;
     try {

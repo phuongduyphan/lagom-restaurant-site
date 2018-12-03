@@ -2,6 +2,36 @@ const db = require('../../config/mysql-config');
 const queryStatement = require('./OrderSqlStatements');
 
 module.exports = {
+  async order_pending_get(req, res) {
+    try {
+      const connection = await db.getConnection();
+      const result = await connection.query(queryStatement.selectAllPendingOrders);
+      res.send(result);
+    } catch (err) {
+      throw err;
+    }
+  },
+
+  async order_confirmed_get(req, res) {
+    try {
+      const connection = await db.getConnection();
+      const result = await connection.query(queryStatement.selectAllConfirmedOrders);
+      res.send(result);
+    } catch (err) {
+      throw err;
+    }
+  },
+
+  async order_delivered_get(req, res) {
+    try {
+      const connection = await db.getConnection();
+      const result = await connection.query(queryStatement.selectAllDeliveredOrders);
+      res.send(result);
+    } catch (err) {
+      throw err;
+    }
+  },
+
   async order_post(req, res) {
     const { order } = req.body;
     try {
@@ -32,7 +62,7 @@ module.exports = {
       throw err;
     }
   },
-	async order_get(req, res) {
+	async orderId_get(req, res) {
 		const { orderId } = req.params;
 		try {
       const connection = await db.getConnection();
