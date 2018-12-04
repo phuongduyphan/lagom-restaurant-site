@@ -7,7 +7,7 @@
   <title>LAGOM</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/contact.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/about.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
@@ -27,10 +27,10 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/">Home</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about.html">About us</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="/about.html">About us <span class="sr-only">(current)</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/menu.html">Menu</a>
@@ -38,8 +38,8 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Table reservation</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/contact.html">Contact<span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact.html">Contact</a>
           </li>
         </ul>
       </div>
@@ -49,19 +49,45 @@
       <img src="images/aboutus.png" alt="Lagom" style="visibility: hidden">
     </div>
 
-    <div class="row main">
-      <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:EkMxNDAgVHLhuqduIENhbyBWw6JuLCBQaMaw4budbmcgNiwgUXXhuq1uIDMsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFtIhsSGQoUChIJdypxhjYvdTERvFrws3vTZrIQjAE&key=AIzaSyCNTWaGcUgrBjilf_4kYhb9RN9LaXCgaRo"
-        allowfullscreen class="col-lg-6 col-10"></iframe>
-      <div class="col-lg-4 col-12 contact-info">
-        <h2>LAGOM restaurant</h2>
-        <p>Monday - Sunday: 10:00 - 23:00 <br> 
-          (last order: 22:30) <br>
-          Address: 40 Trần Cao Vân Street, District 3, HCMC <br>
-          Phone: +84-28-3622-0435 
-        </p>
-      </div>
-    </div>
+    <div class="main">
 
+      <div class="row" id="slide1">
+        <div class="col-lg-5 content">
+          <h2>Welcome to Lagom!</h2>
+          <p>Lagom is a unique floating restaurant in Ho Chi Minh City. Located at Saigon Port, No. 40 Tran Cao Van
+            Street, District 3, Ho Chi Minh City, Lagom has an ideal location. There is one site being the busy and
+            luxurious of downtown - District 3 and one site close to District 1 which is the most concentrated
+            commercial
+            center. <br> <br>
+            We offer a diverse menu. The food takes its inspiration from Europe dishes-served in a warm atmosphere
+            where
+            the emphasis is on comfort, taste and above all, relaxation and enjoyment. Grilled sea bass fillet, Salmon
+            and smoked haddock fish cake, Chicken Milanese...are just a few of the special dishes you'll find on Lagom
+            's
+            enticing menu. In meal, you can order some sides dishes and enjoy a Vanilla shakerato or Ceylon, Earl Grey.
+            Cap off your main course with Cappuccino and one of our specialty desserts such as Whiskey crème brûlée,
+            Mini
+            chocolate truffles and Chocolate bombe.
+          </p>
+        </div>
+        <img src="images/about-1.jpg" alt="" class="col-lg-6 offset-lg-1">
+      </div>
+
+      <div class="row justify-content-between" id="slide2">
+        <img src="images/about-slide2-1.jpg" alt="" class="col-lg-4">
+        <img src="images/about-slide2-2-crop.jpg" alt="" class="col-lg-8">
+      </div>
+
+      <div class="row" id="slide3">
+          <p class="col-12">
+            With non-stop effort to improve quality food and services, Lagom Restaurant hope to become destination where
+            the customer can find enjoyment in relaxing lunch, romantic evening or simply after working hard at the
+            company.
+          </p>
+          <h2 class="col-12">Thank you and enjoy your meal – We hope to serve you!</h2>
+        </div>
+
+    </div>
 
     <div class="row footer">
       <div class="col-lg-4 offset-lg-1 col-12 info">
@@ -83,16 +109,6 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-    function initMap() {
-      const location = { lat: 10.785330, lng: 106.698130 };
-      const map = new google.maps.Map(document.getElementById('map'), { zoom: 17, center: location });
-      const marker = new google.maps.Marker({ position: location, map: map });
-    }
-  </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNTWaGcUgrBjilf_4kYhb9RN9LaXCgaRo&callback=initMap">
-  </script>
 </body>
 
 </html>
