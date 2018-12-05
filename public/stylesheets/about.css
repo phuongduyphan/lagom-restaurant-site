@@ -6,11 +6,12 @@ body {
   font-weight: 400;
 }
 
+.navbar-container {
+  top: 0;
+}
+
 .navbar {
   background: transparent;
-  top: 0;
-  right: 0;
-  left: 0;
 }
 
 .navbar .navbar-brand {
@@ -110,9 +111,11 @@ body {
     background-size: 200%;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: hidden;
   }
   .header img {
     width: 200%;
+    overflow: hidden;
   }
   #slide1 img {
     padding-top: 3rem;
