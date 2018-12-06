@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+input[type=date]:invalid::-webkit-datetime-edit, input[type=time]:invalid::-webkit-datetime-edit {
+  color: #999;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.navbar-container {
+  top: 0;
+}
+
+.navbar {
+  background: transparent;
+}
+
+.navbar .navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+.header {
+  background: url('../images/aboutus.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*main*/
+
+.slide1 {
+  text-align: center;
+  padding: 10rem 4rem;
+}
+
+.slide1 h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+.slide1 p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.slide2 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 6rem;
+}
+
+.slide2 form {
+  width: 50%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group label {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+.input-group input {
+  margin-bottom: 1rem;
+  border: none;
+  outline: none;
+  border-bottom: #999 solid 1px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.input-group p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+}
+
+.input-group textarea[name="special-requests"] {
+  height: 10rem;
+  border: none;
+  outline: none;
+  border: #999 solid 1px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.input-group button {
+  width: 100px;
+  margin-left: auto;
+}
+
+/**/
+
+.footer {
+  padding: 4rem 5rem;
+  /* background: #181818;
+  color: #EEE; */
+}
+
+.footer .info h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.info-follow .follow-icon {
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 992px) {
+  .navbar .navbar-brand {
+    display: none;
+  }
+  .navbar-toggler {
+    margin-left: auto;
+  }
+  #navbarNavDropdown {
+    text-align: center;
+  }
+  .header {
+    background: url('../images/aboutus.png');
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+  }
+  .header img {
+    width: 200%;
+    overflow: hidden;
+  }
+  .slide1 {
+    padding: 7rem 3rem;
+  }
+  .slide2 {
+    padding-bottom: 5rem;
+  }
+  .footer {
+    padding: 3rem;
+  }
+  .footer .info {
+    padding-bottom: 1rem;
+  }
+  .footer .info, .footer .info-follow {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+  .slide1 {
+    padding: 5rem 2rem;
+  }
+  .slide2 form {
+    width: 70%;
+  }
+  .slide2 {
+    padding-bottom: 4rem;
+  }
+  .input-group button {
+    width: 70px;
+  }
+}
+
