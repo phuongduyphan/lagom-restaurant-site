@@ -8,6 +8,8 @@ body {
 
 .navbar-container {
   top: 0;
+  margin: 0 -15px !important;
+  padding: 0 !important;
 }
 
 .navbar {
@@ -19,11 +21,29 @@ body {
   font-weight: bold;
 }
 
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > .dropdown-menu {
+  background-color: #1e1e1e;
+}
+
+.dropdown > .dropdown-menu > .dropdown-item {
+  color: #a9a9a9;
+}
+
+.dropdown > .dropdown-menu > .dropdown-item:hover {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
 .header {
   background: url('../images/aboutus.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 672px;
 }
 
 .main {
@@ -54,12 +74,6 @@ body {
   padding: 0 0.5rem;
 }
 
-@media (max-width: 600px) {
-  html {
-    font-size: 15px;
-  }
-}
-
 @media (max-width: 992px) {
   .navbar .navbar-brand {
     display: none;
@@ -71,21 +85,19 @@ body {
     text-align: center;
   }
   .header {
-    background: url('../images/aboutus.png');
-    background-size: 200%;
-    background-repeat: no-repeat;
-    background-position: center;
-    overflow: hidden;
+    height: 500px;
   }
-  .header img {
-    width: 200%;
-    overflow: hidden;
+  .dropdown > .dropdown-menu {
+    text-align: center;
   }
   .main {
     padding: 3rem;
   }
   .main img {
     display: none;
+  }
+  .main .content p {
+    padding-top: 1.5rem;
   }
   .footer {
     padding: 3rem;
@@ -95,5 +107,17 @@ body {
   }
   .footer .info, .footer .info-follow {
     text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+  .header {
+    height: 400px;
+  }
+  .main {
+    padding: 2rem;
   }
 }

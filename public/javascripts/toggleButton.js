@@ -6,6 +6,7 @@ toggleButton.addEventListener('click', () => {
   const navbar = document.getElementsByClassName('navbar')[0];
   if (count === 0) {
     navbar.style.backgroundColor = '#e8e8e8';
+    navbar.style.zIndex = 1;
   }
   else {
     navbar.style.backgroundColor = 'transparent';

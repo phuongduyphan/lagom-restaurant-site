@@ -8,6 +8,8 @@ body {
 
 .navbar-container {
   top: 0;
+  margin: 0 -15px !important;
+  padding: 0 !important;
 }
 
 .navbar {
@@ -19,11 +21,29 @@ body {
   font-weight: bold;
 }
 
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > .dropdown-menu {
+  background-color: #1e1e1e;
+}
+
+.dropdown > .dropdown-menu > .dropdown-item {
+  color: #a9a9a9;
+}
+
+.dropdown > .dropdown-menu > .dropdown-item:hover {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
 .header {
-  background: url('../images/aboutus.png');
+  background: url('../images/desserts.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 672px;
 }
 
 /*main*/
@@ -32,11 +52,12 @@ body {
   text-align: center;
   margin: 5.5rem;
   padding-top: 3rem;
+  padding-bottom: 3rem;
   border: #181818 solid 1px;
 }
 
 .main h2 {
-  padding-bottom: 6rem;
+  padding-bottom: 3rem;
   font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
@@ -45,11 +66,8 @@ body {
   font-size: 1.1rem;
   font-weight: bold;
   margin: 0;
+  padding-top: 3rem;
   padding-bottom: 1rem;
-}
-
-.main .dish-description {
-  padding-bottom: 3rem;
 }
 
 /**/
@@ -68,11 +86,37 @@ body {
   padding: 0 0.5rem;
 }
 
+@media (max-width: 992px) {
+  .navbar-toggler {
+    margin-left: auto;
+  }
+  #navbarNavDropdown {
+    text-align: center;
+  }
+  .header {
+    height: 500px;
+  }
+  .dropdown > .dropdown-menu {
+    text-align: center;
+  }
+  .footer {
+    padding: 3rem;
+  }
+  .footer .info {
+    padding-bottom: 1rem;
+  }
+  .footer .info, .footer .info-follow {
+    text-align: center;
+  }
+}
+
 @media (max-width: 600px) {
   html {
     font-size: 15px;
   }
-
+  .header {
+    height: 400px;
+  }
   .main {
     text-align: center;
     border: none;
@@ -88,37 +132,5 @@ body {
 
   .main .dish-description {
     padding-bottom: 2rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .navbar .navbar-brand {
-    display: none;
-  }
-  .navbar-toggler {
-    margin-left: auto;
-  }
-  #navbarNavDropdown {
-    text-align: center;
-  }
-  .header {
-    background: url('../images/aboutus.png');
-    background-size: 200%;
-    background-repeat: no-repeat;
-    background-position: center;
-    overflow: hidden;
-  }
-  .header img {
-    width: 200%;
-    overflow: hidden;
-  }
-  .footer {
-    padding: 3rem;
-  }
-  .footer .info {
-    padding-bottom: 1rem;
-  }
-  .footer .info, .footer .info-follow {
-    text-align: center;
   }
 }

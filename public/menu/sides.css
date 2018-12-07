@@ -39,7 +39,7 @@ body {
 }
 
 .header {
-  background: url('../images/aboutus.png');
+  background: url('../images/sides.cms');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -49,23 +49,25 @@ body {
 /*main*/
 
 .main {
-  padding: 5rem 0 3rem 0;
+  text-align: center;
+  margin: 5.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border: #181818 solid 1px;
 }
 
-.main iframe {
-  margin: 0 2rem 0 4rem;
-  height: 450px;
-  width: 750px;
-}
-
-.main .contact-info h2 {
+.main h2 {
+  padding-bottom: 3rem;
   font-family: 'Playfair Display', serif;
   font-weight: 400;
 }
 
-.main .contact-info p {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+.main .dish-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 /**/
@@ -85,9 +87,6 @@ body {
 }
 
 @media (max-width: 992px) {
-  .navbar .navbar-brand {
-    display: none;
-  }
   .navbar-toggler {
     margin-left: auto;
   }
@@ -98,18 +97,6 @@ body {
     height: 500px;
   }
   .dropdown > .dropdown-menu {
-    text-align: center;
-  }
-  .row {
-    justify-content: center;
-  }
-  .main iframe {
-    margin: 0;
-    padding-bottom: 3rem;
-    width: 100%;
-    height: 450px;
-  }
-  .main .contact-info {
     text-align: center;
   }
   .footer {
@@ -129,5 +116,21 @@ body {
   }
   .header {
     height: 400px;
+  }
+  .main {
+    text-align: center;
+    border: none;
+    margin: 0;
+    padding-top: 5rem;
+  }
+
+  .main h2 {
+    padding-bottom: 4rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+  }
+
+  .main .dish-description {
+    padding-bottom: 2rem;
   }
 }
