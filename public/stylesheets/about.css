@@ -21,8 +21,19 @@ body {
   font-weight: bold;
 }
 
-.dropdown:hover > .dropdown-menu {
+.dropdown .dropdown-menu {
+  transition: all 0.5s;
+  max-height: 0;
+  padding: 0;
   display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.dropdown:hover > .dropdown-menu {
+  max-height: 300px;
+  padding: 10px 0;
+  opacity: 1;
 }
 
 .dropdown > .dropdown-menu {
@@ -114,6 +125,7 @@ body {
 
 .info-follow .follow-icon {
   padding: 0 0.5rem;
+  color: #212529;
 }
 
 @media (max-width: 992px) {
