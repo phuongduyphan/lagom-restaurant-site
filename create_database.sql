@@ -1,12 +1,12 @@
-create schema `mis-restaurant`;
+create schema `lagom-restaurant`;
 
-use `mis-restaurant`;
+use `lagom-restaurant`;
 
 create table `user` (
 	`user_id` int(11) not null auto_increment,
     `user_full_name` varchar(100) not null,
     `user_phone_number` varchar(15) not null, 
-    `user_address` varchar(255) not null,
+    `user_address` varchar(255),
     primary key (`user_id`)
 );
 
@@ -45,10 +45,10 @@ create table `order_contains` (
 create table `reservation` (
 	`reservation_id` int(11) not null auto_increment,
 	`user_id` int(11) not null,
-    `reservation_date` date not null,
-    `expected_arrival_time` time not null,
-    `number_of_guests` int(11) not null,
-    `reservation_status` enum('pending', 'confirmed', 'declined') not null default 'pending',
+    `arrival_date` date not null,
+    `arrival_time` time not null,
+    `party_size` int(11) not null,
+    `status` enum('pending', 'confirmed', 'declined') not null default 'pending',
     primary key (`reservation_id`),
     foreign key (`user_id`)
 		references `user` (`user_id`)

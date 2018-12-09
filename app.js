@@ -6,8 +6,11 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
-const orderAPIRouter = require('./routes/orderAPI');
-const reservationAPIRouter = require('./routes/reservationAPI');
+const aboutRouter = require('./routes/about');
+const menuRouter = require('./routes/menu');
+const reservationRouter = require('./routes/reservation');
+const contactRouter = require('./routes/contact');
+//const reservationAPIRouter = require('./routes/reservationAPI');
 const dishAPIRouter = require('./routes/dishAPI');
 
 const app = express();
@@ -27,8 +30,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false }));
 
 app.use('/', indexRouter);
-app.use('/api/orders', orderAPIRouter);
-app.use('/api/reservations', reservationAPIRouter);
+app.use('/about', aboutRouter);
+app.use('/menu', menuRouter);
+app.use('/reservation', reservationRouter);
+app.use('/contact', contactRouter);
+//app.use('/api/reservations', reservationAPIRouter);
 app.use('/api/dishes', dishAPIRouter);
 
 // catch 404 and forward to error handler

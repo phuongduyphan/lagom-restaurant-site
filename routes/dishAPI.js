@@ -1,25 +1,46 @@
 const express = require('express');
-const multer = require('multer');
 
-const multerStorage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, './public/images/dishes');
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname);
-  }
-});
-const upload = multer({
-  storage: multerStorage,
-  limits: 5 * 1024 * 1024
-});
-
-const DishController = require('../src/dish/DishController');
+const { Dish } = require('../models/dish/Dish');
 
 const router = express.Router();
 
-router.get('/', DishController.dish_get);
-router.post('/', upload.single('dishImage'), DishController.dish_post);
-router.put('/:dishId', upload.single('dishImage'), DishController.dish_put);
+router.get('/', async (req, res, next) => {
+  try {
+    const { status } = req.query;
+    let dish;
+
+    if (status) {
+      dish = await Dish.query().where({ dishStatus: status });
+    }
+    else {
+      dish = await Dish.query();
+    }
+    res.send(dish);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.post('/', async (req, res, next) => {
+  try {
+    const { dish } = req.body;
+    await Dish.query().insert(dish);
+    res.sendStatus(201);
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.put('/:dishId', async (req, res, next) => {
+  try {
+    const { dish } = req.body;
+    const { dishId } = req.params; 
+
+    await Dish.query().patch(dish).where({ dishId: dishId });
+    res.sendStatus(201);
+  } catch (err) {
+    next(err);
+  }
+});
 
 module.exports = router;

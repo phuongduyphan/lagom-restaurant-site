@@ -7,13 +7,13 @@
   <title>LAGOM</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/contact.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
     crossorigin="anonymous">
-
   <link rel="stylesheet" href="stylesheets/animate.css">
+
 </head>
 
 <body>
@@ -26,23 +26,18 @@
     <% include components/navbar.ejs%>
 
     <div class="row main">
-      <img src="images/home-content.jpg" alt="" class="col-lg-6 pb-5 col-12">
-      <div class="col-lg-5 offset-lg-1 col-md-10 offset-md-1 col-sm-12 content">
-        <h2 class="wow fadeInUp">Our concept</h2>
-        <p class="wow fadeInUp" data-wow-delay="0.2s">The Swedish art of eating harmoniously
-          Lagom doesn’t really have a direct translation in English, but it basically means not too much, not too
-          little.
-          A sufficient amount or just right. You can be lagom warm or lagom tall. It has been called the goldilocks
-          principal, but it’s actually so much more than just a quantifier. It goes deep into the heart of our national
-          psyche. Lagom is about fairness and consensus and an aversion to anything too ostentatious. One definition of
-          lagom is average or in the middle. <br><br>
-          We have a lagom attitude towards our economy, our stance on gender equality, you can find it in our
-          distinctive
-          seasons, our appreciation of quality, innovation, progress and design. The Volvo is a classic example – it’s
-          the most lagom car: practical, dependable, not too flashy. Swedes even joke about how lagom they are, they’ll
-          roll their eyes and say ‘lagom är bäst,’ ‘lagom is best.’</p>
+      <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=40%20Tran%20Cao%20Van&key=AIzaSyCNTWaGcUgrBjilf_4kYhb9RN9LaXCgaRo"
+        allowfullscreen class="col-lg-6 col-10"></iframe>
+      <div class="col-lg-4 col-12 contact-info wow fadeInUp">
+        <h2>LAGOM restaurant</h2>
+        <p>Monday - Sunday: 10:00 - 23:00 <br>
+          (last order: 22:30) <br>
+          Address: 40 Trần Cao Vân Street, District 3, HCMC <br>
+          Phone: +84-28-3622-0435
+        </p>
       </div>
     </div>
+
 
     <div class="row footer">
       <div class="col-lg-4 offset-lg-1 col-12 info">
@@ -64,7 +59,16 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-  <script></script>
+
+  <script type="text/javascript">
+    function initMap() {
+      const location = { lat: 10.785330, lng: 106.698130 };
+      const map = new google.maps.Map(document.getElementById('map'), { zoom: 17, center: location });
+      const marker = new google.maps.Marker({ position: location, map: map });
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNTWaGcUgrBjilf_4kYhb9RN9LaXCgaRo&callback=initMap">
+  </script>
   <script src="javascripts/toggleButton.js"></script>
   <script src="javascripts/wow.min.js"></script>
   <script src="javascripts/wowInit.js"></script>
