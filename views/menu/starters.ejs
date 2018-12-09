@@ -28,48 +28,13 @@
       <div class="row main wow fadeIn">
         <h2 class="col-10 offset-1 menu-header">Starters</h2>
 
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Roast pumpkin soup</h3>
-          <p class="dish-price">70 000 VND</p>
-          <p class="dish-description">Creamed pumpkin with ricotta, pine nuts and crispy sage</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Raw market salad</h3>
-          <p class="dish-price">95 000 VND</p>
-          <p class="dish-description">Thinly shaved market vegetables with avocado houmous, toasted sesame, maple and
-            wholegrain mustard dressing</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Organic Irish smoked salmon</h3>
-          <p class="dish-price">135 000 VND</p>
-          <p class="dish-description">From the award winning Wright’s of Howth smokehouse, served with soda bread
-            Organic
-            Irish smoked salmon </p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Prawn cocktail</h3>
-          <p class="dish-price">110 000 VND</p>
-          <p class="dish-description">Classic prawn cocktail with baby gem, avocado, cherry tomatoes and Marie Rose
-            sauce</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Prawn cocktail</h3>
-          <p class="dish-price">110 000 VND</p>
-          <p class="dish-description">Classic prawn cocktail with baby gem, avocado, cherry tomatoes and Marie Rose
-            sauce</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Warm chicken salad</h3>
-          <p class="dish-price">120 000 VND</p>
-          <p class="dish-description">Grilled miso-coated chicken with a salad of herbs, barley, apples, grapes,
-            sesame,
-            pomegranate and a tarragon yogurt sauce on the side</p>
-        </div>
+        <% listOfDishes.forEach((element) => { %>
+          <div class="col-10 offset-1 dish">
+            <h3 class="dish-name"><%= element.dishName %></h3>
+            <p class="dish-price"><%= element.dishPrice %></p>
+            <p class="dish-description"><%= element.dishDescription%></p>
+          </div>
+        <% }) %>
 
       </div>
     </div>

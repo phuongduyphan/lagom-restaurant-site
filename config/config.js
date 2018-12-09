@@ -1,16 +1,11 @@
 
 const { Model, knexSnakeCaseMappers } = require('objection');
 const Knex = require('knex');
+const knexConfig = require('../knexfile');
 
-const knex = Knex(Object.assign({
-  client: 'mysql',
-  connection: {
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'lagom-restaurant',
-  },
-}, knexSnakeCaseMappers()));
+const environment = process.env.NODE_ENV || 'development';
+
+const knex = Knex(Object.assign(knexConfig[environment], knexSnakeCaseMappers()));
 
 Model.knex(knex);
 

@@ -12,6 +12,7 @@ const reservationRouter = require('./routes/reservation');
 const contactRouter = require('./routes/contact');
 //const reservationAPIRouter = require('./routes/reservationAPI');
 const dishAPIRouter = require('./routes/dishAPI');
+const manageRouter = require('./routes/manage');
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.use('/reservation', reservationRouter);
 app.use('/contact', contactRouter);
 //app.use('/api/reservations', reservationAPIRouter);
 app.use('/api/dishes', dishAPIRouter);
+app.use('/manage', manageRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

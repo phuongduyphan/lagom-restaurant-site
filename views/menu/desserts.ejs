@@ -27,31 +27,14 @@
     <div class="container">
       <div class="row main wow fadeIn">
         <h2 class="col-10 offset-1 menu-header">Desserts</h2>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Chocolate bombe</h3>
-          <p class="dish-price">60 000 VND</p>
-          <p class="dish-description">Melting chocolate bombe with a vanilla ice cream and honeycomb centre with hot
-            salted caramel sauce</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Cappuccino cake</h3>
-          <p class="dish-price">80 000 VND</p>
-          <p class="dish-description">Warm chocolate cake, milk mousse and coffee sauce</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Mini chocolate truffles </h3>
-          <p class="dish-price">70 000 VND</p>
-          <p class="dish-description">With a liquid salted caramel centre</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Whiskey crème brûlée </h3>
-          <p class="dish-price">55 000 VND</p>
-          <p class="dish-description">Set Dubliner whiskey vanilla custard with a caramelised sugar crust</p>
-        </div>
+        
+        <% listOfDishes.forEach((element) => { %>
+          <div class="col-10 offset-1 dish">
+            <h3 class="dish-name"><%= element.dishName %></h3>
+            <p class="dish-price"><%= element.dishPrice %></p>
+            <p class="dish-description"><%= element.dishDescription%></p>
+          </div>
+        <% }) %>
 
       </div>
     </div>

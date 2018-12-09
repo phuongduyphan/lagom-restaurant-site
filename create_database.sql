@@ -14,8 +14,10 @@ create table `dish` (
 	`dish_id` int(11) not null auto_increment,
 	`dish_name` varchar(100) not null,
     `dish_description` varchar(255),
+    `dish_price` varchar(100),
     `dish_image_path` varchar(255),
     `dish_status` enum('available', 'unavailable') not null default 'available',
+    `dish_category` enum('starter', 'main', 'side', 'dessert', 'drink') not null,
     primary key (`dish_id`)
 );
 

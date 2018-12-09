@@ -28,37 +28,13 @@
       <div class="row main wow fadeIn">
         <h2 class="col-10 offset-1 menu-header">Mains</h2>
 
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Grilled sea bass fillet </h3>
-          <p class="dish-price">150 000 VND</p>
-          <p class="dish-description">Smoked aubergine, tomato pesto and a tomato, olive, shallot and coriander
-            dressing</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Salmon and smoked haddock fish cake </h3>
-          <p class="dish-price">175 000 VND</p>
-          <p class="dish-description">Crushed pea and herb sauce with a soft poached hen's egg and baby watercress</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Roast salmon fillet </h3>
-          <p class="dish-price">160 000 VND</p>
-          <p class="dish-description">Sprouting broccoli, smoked almonds and a herb sauce on the side </p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Chicken Milanese</h3>
-          <p class="dish-price">160 000 VND</p>
-          <p class="dish-description">Brioche-crumbed chicken breast with a fried egg, Parmesan and truffle cream sauce</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">The Ivy hamburger</h3>
-          <p class="dish-price">140 000 VND</p>
-          <p class="dish-description">Chargrilled “forequarter” burger in a brioche bun with mayonnaise, horseradish
-            ketchup and chips Add Hegarty’s cheddar</p>
-        </div>
+        <% listOfDishes.forEach((element) => { %>
+          <div class="col-10 offset-1 dish">
+            <h3 class="dish-name"><%= element.dishName %></h3>
+            <p class="dish-price"><%= element.dishPrice %></p>
+            <p class="dish-description"><%= element.dishDescription%></p>
+          </div>
+        <% }) %>
 
       </div>
     </div>

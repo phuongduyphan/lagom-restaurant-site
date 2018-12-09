@@ -28,70 +28,13 @@
       <div class="row main wow fadeIn">
         <h2 class="col-10 offset-1 menu-header">Drinks</h2>
 
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Ceylon, Earl Grey</h3>
-          <p class="dish-price">45 000 VND</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Fresh mint, Camomile, Peppermint, Verbena </h3>
-          <p class="dish-price">40 000 VND</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Rosebud, Oolong </h3>
-          <p class="dish-price">50 000 VND</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Cappuccino, Latte, Americano, Flat white, Espresso, Macchiato</h3>
-          <p class="dish-price">40 000 VND</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Hot chocolate milk / mint / white </h3>
-          <p class="dish-price">50 000 VND</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Vanilla shakerato </h3>
-          <p class="dish-price">55 000 VND</p>
-          <p class="dish-description">Espresso shaken with ice, served in a martini glass</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Mini chocolate truffles </h3>
-          <p class="dish-price">50 000 VND</p>
-          <p class="dish-description">With a liquid salted caramel centre</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Choice of fresh juices </h3>
-          <p class="dish-price">45 000 VND</p>
-          <p class="dish-description">orange / apple / grapefruit</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Rosemary Lemonade </h3>
-          <p class="dish-price">45 000 VND</p>
-          <p class="dish-description">A refreshing blend of lemon, lime & Fever-Tree soda with homemade rosemary syrup</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Strawberry & Vanilla Soda </h3>
-          <p class="dish-price">65 000 VND</p>
-          <p class="dish-description">A blend of strawberry, fruits & vanilla with Fever-Tree soda water</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Coca-Cola </h3>
-          <p class="dish-price">30 000 VND</p>
-        </div>
-
-        <div class="col-10 offset-1 dish">
-          <h3 class="dish-name">Coke Zero & Diet Coke </h3>
-          <p class="dish-price">35 000 VND</p>
-        </div>
+        <% listOfDishes.forEach((element) => { %>
+          <div class="col-10 offset-1 dish">
+            <h3 class="dish-name"><%= element.dishName %></h3>
+            <p class="dish-price"><%= element.dishPrice %></p>
+            <p class="dish-description"><%= element.dishDescription%></p>
+          </div>
+        <% }) %>
 
       </div>
     </div>
