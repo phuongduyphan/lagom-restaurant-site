@@ -53,4 +53,15 @@ router.put('/:dishId', async (req, res, next) => {
   }
 });
 
+router.delete('/:dishId', async (req, res, next) => {
+  try {
+    const { dishId } = req.params;
+
+    await Dish.query().delete().where({ dishId });
+    res.sendStatus(200);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

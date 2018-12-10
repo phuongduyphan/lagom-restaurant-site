@@ -28,4 +28,10 @@ window.addEventListener('load', async () => {
     await axios.put(`/api/dishes/${dishId}`, { dish: updatedDish });
     alert('Success');
   });
+
+  const removeButton = document.getElementById('remove-button');
+  removeButton.addEventListener('click', async () => {
+    await axios.delete(`/api/dishes/${dishId}`);
+    alert('Dish successfully removed');
+  });
 });

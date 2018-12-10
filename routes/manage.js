@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 /* GET home page. */
-router.get('/options', function (req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('manage/options');
 });
 

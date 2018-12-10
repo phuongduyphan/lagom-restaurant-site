@@ -61,8 +61,14 @@ form .input-container {
   font-size: 1rem;
 }
 
+form .button-flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 2rem 0 5rem 0;
+}
+
 form button {
-  margin-left: auto;
   font-size: 1rem;
 }
 
@@ -76,5 +82,13 @@ form button {
 @media (max-width: 600px) {
   form {
     width: 80%;
+  }
+  form .button-flex {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  form button {
+    margin: 0.5rem 0;
   }
 }
