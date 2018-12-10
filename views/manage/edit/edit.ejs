@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Add new dish</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/addDish.css" />
+</head>
+
+<body>
+  <div class="container">
+    <form action="javascript:void(0);" id="dish-form">
+      <h2>Edit Dish</h2>
+
+      <div class="input-container">
+        <label for="dish-name">Dish Name</label>
+        <input type="text" name="dish-name" id="dish-name">
+      </div>
+
+      <div class="input-container">
+        <label for="dish-description">Dish Description</label>
+        <textarea name="dish-description" form="dish-form" id="dish-description"></textarea>
+      </div>
+
+      <div class="input-container">
+        <label for="dish-price">Price</label>
+        <input type="text" name="dish-price" id="dish-price">
+      </div>
+
+      <div class="input-container">
+        <label for="dish-status">Status</label>
+        <select name="dish-status" id="dish-status">
+          <option value="available">Available</option>
+          <option value="unavailable">Unavailable</option>
+        </select>
+      </div>
+
+      <div class="input-container">
+        <label for="dish-category">Category</label>
+        <select name="dish-category" id="dish-category">
+          <option value="starter">Starter</option>
+          <option value="main">Main</option>
+          <option value="side">Side</option>
+          <option value="dessert">Dessert</option>
+          <option value="drink">Drink</option>
+        </select>
+      </div>
+
+      <button type="submit" id="submit-button">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="javascripts/edit.js"></script>
+</body>
+
+</html>

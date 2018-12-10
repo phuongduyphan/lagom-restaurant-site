@@ -3,6 +3,7 @@ const router = express.Router();
 const { Dish } = require('../models/dish/Dish');
 
 /* GET home page. */
+
 router.get('/starters', async function (req, res, next) {
   try {
     const listOfDishes = await Dish.query().where({

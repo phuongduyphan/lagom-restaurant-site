@@ -31,6 +31,16 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+router.get('/:dishId', async (req, res, next) => {
+  try {
+    const { dishId } = req.params;
+    const dish = await Dish.query().where({ dishId });
+    res.send(dish);
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.put('/:dishId', async (req, res, next) => {
   try {
     const { dish } = req.body;

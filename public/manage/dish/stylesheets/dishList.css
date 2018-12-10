@@ -1,0 +1,27 @@
+.nav .nav-item a {
+  color: rgb(73, 80, 87);
+}
+
+.status-filter {
+  margin-top: 2rem;
+}
+
+.status-filter label {
+  margin-right: 0.7rem;
+}
+
+.status-filter select {
+  height: 30px;
+}
+
+.container .dish {
+  text-align: center;
+}
+
+.container .dish-name {
+  margin-top: 3rem;
+}
+
+.footer {
+  height: 5rem;
+}
