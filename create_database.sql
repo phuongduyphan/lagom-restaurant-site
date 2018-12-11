@@ -5,7 +5,8 @@ use `lagom-restaurant`;
 create table `user` (
 	`user_id` int(11) not null auto_increment,
     `user_full_name` varchar(100) not null,
-    `user_phone_number` varchar(15) not null, 
+    `user_phone_number` varchar(15) not null,
+    `user_email` varchar(255) not null,
     `user_address` varchar(255),
     primary key (`user_id`)
 );
@@ -50,6 +51,7 @@ create table `reservation` (
     `arrival_date` date not null,
     `arrival_time` time not null,
     `party_size` int(11) not null,
+    `special_requests` varchar(255),
     `status` enum('pending', 'confirmed', 'declined') not null default 'pending',
     primary key (`reservation_id`),
     foreign key (`user_id`)

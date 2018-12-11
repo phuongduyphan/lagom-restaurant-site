@@ -10,7 +10,7 @@ const aboutRouter = require('./routes/about');
 const menuRouter = require('./routes/menu');
 const reservationRouter = require('./routes/reservation');
 const contactRouter = require('./routes/contact');
-//const reservationAPIRouter = require('./routes/reservationAPI');
+const reservationAPIRouter = require('./routes/reservationAPI');
 const dishAPIRouter = require('./routes/dishAPI');
 const manageRouter = require('./routes/manage');
 
@@ -35,7 +35,7 @@ app.use('/about', aboutRouter);
 app.use('/menu', menuRouter);
 app.use('/reservation', reservationRouter);
 app.use('/contact', contactRouter);
-//app.use('/api/reservations', reservationAPIRouter);
+app.use('/api/reservations', reservationAPIRouter);
 app.use('/api/dishes', dishAPIRouter);
 app.use('/manage', manageRouter);
 

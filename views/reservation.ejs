@@ -36,28 +36,28 @@
       <form action="javascript:void(0);" id="reservation-form">
         <div class="input-group wow fadeInUp">
           <label for="name">Name</label>
-          <input type="text" name="name" required>
+          <input type="text" name="name" id="name" required>
 
           <label for="phone-number">Phone Number</label>
-          <input type="tel" name="phone-number" required>
+          <input type="tel" name="phone-number" id="phone-number" required>
 
           <label for="email">Email</label>
-          <input type="text" name="email" required>
+          <input type="text" name="email" id="email" required>
 
           <label for="arrival-date">Arrival Date</label>
-          <input type="date" name="arrival-date" required>
+          <input type="date" name="arrival-date" id="arrival-date" required>
 
           <label for="arrival-time">Arrival Time</label>
-          <input type="time" name="arrival-time" required>
+          <input type="time" name="arrival-time" id="arrival-time" required>
 
           <label for="party-size">Party Size</label>
-          <input type="text" name="party-size" required>
+          <input type="text" name="party-size" id="party-size" required>
 
           <label for="special-requests">Special Requests</label>
           <p>If you have any specific requests, please write here. Example: allergy, request for seats, baby chair etc</p>
-          <textarea name="special-requests" form="reservation-form"></textarea>
+          <textarea name="special-requests" form="reservation-form" id="special-requests"></textarea>
 
-          <button type="submit" class="reservationButton">Submit</button>
+          <button type="submit" class="reservationButton" id="reservation-button">Submit</button>
         </div>
       </form>
     </div>
@@ -86,6 +86,8 @@
   <script src="javascripts/toggleButton.js"></script>
   <script src="javascripts/wow.min.js"></script>
   <script src="javascripts/wowInit.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="javascripts/reservation.js"></script>
 </body>
 
 </html>

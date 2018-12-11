@@ -10,8 +10,8 @@ router.get('/addDish', function (req, res, next) {
   res.render('manage/addDish');
 });
 
-router.get('/edit/:dishId', function (req, res, next) {
-  res.render('manage/edit/edit');
+router.get('/dish/edit/:dishId', function (req, res, next) {
+  res.render('manage/dish/edit/edit');
 });
 
 router.get('/dish/starters', async function (req, res, next) {
@@ -51,6 +51,22 @@ router.get('/dish/drinks', async function (req, res, next) {
     res.render('manage/dish/drinks');
   } catch (err) {
     throw err;
+  }
+});
+
+router.get('/reservation', async function (req, res, next) {
+  try {
+    res.render('manage/reservation/reservation');
+  } catch (err) {
+    next(err);
+  }
+});
+
+router.get('/reservation/:reservationId', async function (req, res, next) {
+  try {
+    res.render('manage/reservation/reservationDetail');
+  } catch (err) {
+    next(err);
   }
 });
 

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.slide2 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 6rem;
+  width: 100%;
+}
+
+.slide2 form {
+  width: 50%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+.input-group label {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  margin-bottom: 1rem;
+  border: none;
+  outline: none;
+  border-bottom: #999 solid 1px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.input-group p {
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+}
+
+.input-group textarea[name="special-requests"] {
+  width: 100%;
+  height: 10rem;
+  border: none;
+  outline: none;
+  border: #999 solid 1px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.input-group button {
+  width: 100px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.input-group select {
+  margin: 0.5rem 0 2rem 0;
+  margin-right: auto;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 992px) {
+  .slide2 {
+    padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .slide2 form {
+    width: 70%;
+  }
+  .slide2 {
+    padding-bottom: 4rem;
+  }
+}

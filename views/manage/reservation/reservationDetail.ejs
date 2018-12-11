@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Reservation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/reservationDetail.css" />
+</head>
+
+<body>
+  <div class="row slide2">
+    <form action="javascript:void(0);" id="reservation-form">
+      <div class="input-group wow fadeInUp">
+        <h2>Reservation</h2>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" readonly>
+
+        <label for="phone-number">Phone Number</label>
+        <input type="tel" name="phone-number" id="phone-number" readonly>
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" readonly>
+
+        <label for="arrival-date">Arrival Date</label>
+        <input type="date" name="arrival-date" id="arrival-date" readonly>
+
+        <label for="arrival-time">Arrival Time</label>
+        <input type="time" name="arrival-time" id="arrival-time" readonly>
+
+        <label for="party-size">Party Size</label>
+        <input type="text" name="party-size" id="party-size" readonly>
+
+        <label for="special-requests">Special Requests</label>
+        <p>If you have any specific requests, please write here. Example: allergy, request for seats, baby chair etc</p>
+        <textarea name="special-requests" form="reservation-form" id="special-requests" readonly></textarea>
+
+        <label for="reservation-status">Status</label>
+        <select name="reservation-status" id="reservation-status">
+          <option value="pending">Pending</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="declined">Declined</option>
+        </select>
+
+        <button type="submit" class="reservationButton" id="submit-button">Submit</button>
+      </div>
+    </form>
+  </div>
+  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="javascripts/reservationDetail.js"></script>
+</body>
+
+</html>

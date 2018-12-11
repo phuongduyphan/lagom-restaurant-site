@@ -13,7 +13,7 @@ function render(listOfDishes) {
     <h3 class="dish-name">${element.dishName}</h3>
     <p class="dish-price">${element.dishPrice}</p>
     <p class="dish-description">${element.dishDescription}</p>
-    <a href="/manage/edit/${element.dishId}" target="_blank">Edit</a>
+    <a href="/manage/dish/edit/${element.dishId}" target="_blank">Edit</a>
   </div>`;
   });
   container.innerHTML = htmlContent;
