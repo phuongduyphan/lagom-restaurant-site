@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.navbar-container {
+  top: 0;
+  margin: 0 -15px !important;
+  padding: 0 !important;
+}
+
+.navbar {
+  background: transparent;
+}
+
+.navbar .navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+.dropdown .dropdown-menu {
+  transition: all 0.5s;
+  max-height: 0;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.dropdown:hover > .dropdown-menu {
+  max-height: 300px;
+  padding: 10px 0;
+  opacity: 1;
+}
+
+.dropdown > .dropdown-menu {
+  background-color: #1e1e1e;
+}
+
+.dropdown > .dropdown-menu > .dropdown-item {
+  color: #a9a9a9;
+}
+
+.dropdown > .dropdown-menu > .dropdown-item:hover {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.header {
+  background: url('../images/aboutus.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 672px;
+}
+
+
+
+.footer {
+  padding: 4rem 5rem;
+  /* background: #181818;
+  color: #EEE; */
+}
+
+.footer .info h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.info-follow .follow-icon {
+  padding: 0 0.5rem;
+  color: #212529;
+}
+
+@media (max-width: 992px) {
+  .navbar .navbar-brand {
+    display: none;
+  }
+  .navbar-toggler {
+    margin-left: auto;
+  }
+  #navbarNavDropdown {
+    text-align: center;
+  }
+  .header {
+    height: 500px;
+  }
+  .dropdown > .dropdown-menu {
+    text-align: center;
+  }
+  .footer {
+    padding: 3rem;
+  }
+  .footer .info {
+    padding-bottom: 1rem;
+  }
+  .footer .info, .footer .info-follow {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+  .header {
+    height: 400px;
+  }
+}

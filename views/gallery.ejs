@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>LAGOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/gallery.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="stylesheets/grid-gallery.css">
+
+  <link rel="stylesheet" href="stylesheets/animate.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 header">
+      </div>
+    </div>
+
+    <% include components/navbar.ejs%>
+
+    <section class="gallery-block grid-gallery">
+      <div class="container">
+        <div class="heading wow fadeInUp">
+          <h2>Food Gallery</h2>
+        </div>
+        <div class="row wow fadeInUp">
+          <div class="col-md-6 col-lg-4 item">
+            <a class="lightbox" href="images/gallery/pic1.jpg">
+              <img class="img-fluid image scale-on-hover" src="images/gallery/pic1.jpg">
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 item">
+            <a class="lightbox" href="images/gallery/pic2.jpg">
+              <img class="img-fluid image scale-on-hover" src="images/gallery/pic2.jpg">
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 item">
+            <a class="lightbox" href="images/gallery/pic3.jpg">
+              <img class="img-fluid image scale-on-hover" src="images/gallery/pic3.jpg">
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 item">
+            <a class="lightbox" href="images/gallery/pic4.jpg">
+              <img class="img-fluid image scale-on-hover" src="images/gallery/pic4.jpg">
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 item">
+            <a class="lightbox" href="images/gallery/pic5.jpg">
+              <img class="img-fluid image scale-on-hover" src="images/gallery/pic5.jpg">
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 item">
+            <a class="lightbox" href="images/gallery/pic6.jpg">
+              <img class="img-fluid image scale-on-hover" src="images/gallery/pic6.jpg">
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 item">
+            <a class="lightbox" href="images/gallery/pic7.jpg">
+              <img class="img-fluid image scale-on-hover" src="images/gallery/pic7.jpg">
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 item">
+            <a class="lightbox" href="images/gallery/pic8.jpg">
+              <img class="img-fluid image scale-on-hover" src="images/gallery/pic8.jpg">
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 item">
+            <a class="lightbox" href="images/gallery/pic9.jpg">
+              <img class="img-fluid image scale-on-hover" src="images/gallery/pic9.jpg">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row footer">
+      <div class="col-lg-4 offset-lg-1 col-12 info">
+        <h2>LAGOM</h2>
+        <p class="address">40 Trần Cao Vân Street, District 3</p>
+      </div>
+      <div class="col-lg-3 offset-lg-4 col-12 info-follow">
+        <p>Follow us on</p>
+        <a href="https://www.facebook.com/lagom.thriftshop/" target="_blank"><i class="fab fa-facebook-f fa-lg follow-icon"></i></a>
+        <a href="https://www.instagram.com/lagom.thriftshop/" target="_blank"><i class="fab fa-instagram fa-lg follow-icon"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- script -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script></script>
+  <script src="javascripts/toggleButton.js"></script>
+  <script src="javascripts/wow.min.js"></script>
+  <script src="javascripts/wowInit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+  <script>
+    baguetteBox.run('.grid-gallery', { animation: 'slideIn' });
+  </script>
+</body>
+
+</html>
