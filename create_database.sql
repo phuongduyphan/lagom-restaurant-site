@@ -58,3 +58,10 @@ create table `reservation` (
 		references `user` (`user_id`)
         on delete cascade
 );
+
+create table `admin` (
+	`admin_id` int(11) not null auto_increment,
+	`username` varchar(100) not null unique,
+    `password` varchar(100) not null,
+    primary key(`admin_id`)
+);

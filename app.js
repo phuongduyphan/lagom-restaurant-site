@@ -4,14 +4,17 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+const passport = require('passport');
 
 const indexRouter = require('./routes/index');
 const aboutRouter = require('./routes/about');
 const menuRouter = require('./routes/menu');
 const reservationRouter = require('./routes/reservation');
 const contactRouter = require('./routes/contact');
+const adminRouter = require('./routes/admin');
 const reservationAPIRouter = require('./routes/reservationAPI');
 const dishAPIRouter = require('./routes/dishAPI');
+const adminAPIRouter = require('./routes/adminAPI');
 const manageRouter = require('./routes/manage');
 
 const app = express();
@@ -30,14 +33,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false }));
 
+// Passport config
+app.use(passport.initialize());
+require('./config/passport-config')(passport);
+
+
 app.use('/', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/menu', menuRouter);
 app.use('/reservation', reservationRouter);
 app.use('/contact', contactRouter);
+app.use('/manage', manageRouter);
+app.use('/admin', adminRouter);
 app.use('/api/reservations', reservationAPIRouter);
 app.use('/api/dishes', dishAPIRouter);
-app.use('/manage', manageRouter);
+app.use('/api/admins', adminAPIRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -55,8 +66,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const server = app.listen(process.env.PORT || 3000, () => {
-  console.log(`Node.js listening on ${process.env.PORT || 3000} ...`);
-});
+// const server = app.listen(process.env.PORT || 3000, () => {
+//   console.log(`Node.js listening on ${process.env.PORT || 3000} ...`);
+// });
 
 module.exports = app;

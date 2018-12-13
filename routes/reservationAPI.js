@@ -1,11 +1,17 @@
 const express = require('express');
 const { transaction } = require('objection');
 const moment = require('moment');
+const passport = require('passport');
 
 const { Reservation } = require('../models/reservation/Reservation');
 const { User } = require('../models/user/User');
 
 const router = express.Router();
+
+router.use(passport.authenticate('jwt', {
+  session: false,
+  failureRedirect: '/admin/login'
+}));
 
 router.get('/alls/:reservationId', async (req, res, next) => {
   try {

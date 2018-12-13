@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 
-/* GET home page. */
+router.use(passport.authenticate('jwt', {
+  session: false,
+  failureRedirect: '/admin/login'
+}));
+
 router.get('/', function (req, res, next) {
   res.render('manage/options');
 });
