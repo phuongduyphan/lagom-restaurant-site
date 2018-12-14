@@ -11,11 +11,6 @@ submitButton.addEventListener('click', async () => {
     const res = await axios.post('/api/admins/register', { admin, secretCode });
     window.location.href = '/admin/login';
   } catch (err) {
-    const statusCode = err.response.status;
-    switch (statusCode) {
-      case 401: 
-        alert('Wrong Secret Code');
-        break;
-    }
+    alert(err.response.data.message);
   }
 });

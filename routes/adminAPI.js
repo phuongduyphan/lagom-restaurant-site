@@ -32,13 +32,23 @@ router.post('/register', async function(req, res, next) {
     const { admin } = req.body;
     const { secretCode } = req.body;
     if (secretCode !== key.secretCode) {
-      return res.sendStatus(401);
+      const err = new Error('Secret code is not correct');
+      err.httpCode = 401;
+      err.httpMessage = err.message;
+      throw err;
     };
 
     admin.password = await hashing(admin.password);
     await Admin.query().insert(admin);
     res.sendStatus(201);
   } catch (err) {
+    switch (err.code) {
+      case 'ER_DUP_ENTRY': 
+        err.httpCode = 409;
+        err.httpMessage = 'Username already exists';
+        break;
+    }
+    console.log(err); 
     next(err);
   }
 });
@@ -49,7 +59,10 @@ router.post('/login', async function(req, res, next) {
 
     const listOfAdmins = await Admin.query().where({ username: admin.username });
     if (_.isEmpty(listOfAdmins)) {
-      return res.sendStatus(404);
+      const err = new Error('Username does not exist');
+      err.httpCode = 404;
+      err.httpMessage = err.message;
+      throw err;
     }
     
     const recvAdmin = listOfAdmins[0];
@@ -69,7 +82,10 @@ router.post('/login', async function(req, res, next) {
         token
       });
     } else {
-      res.sendStatus(401);
+      const err = new Error('Incorrect password');
+      err.httpCode = 401;
+      err.httpMessage = err.message;
+      throw err;
     }
   } catch (err) {
     console.log(err);

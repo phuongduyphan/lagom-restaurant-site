@@ -63,6 +63,15 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
+  if (err.httpCode) {
+    const errResponse = {
+      httpCode: err.httpCode,
+      message: err.httpMessage
+    };
+    res.status(errResponse.httpCode);
+    return res.send(errResponse);
+  }
+
   // render the error page
   res.status(err.status || 500);
   res.render('error');

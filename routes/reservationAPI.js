@@ -23,6 +23,7 @@ router.get('/alls/:reservationId', async (req, res, next) => {
     });
     res.send(reservations);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });
@@ -51,6 +52,7 @@ router.put('/:reservationId', async(req, res, next) => {
     await Reservation.query().patch(reservation).where({ reservationId });
     res.sendStatus(201);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });
@@ -73,6 +75,7 @@ router.get('/pending', async (req, res, next) => {
     });
     res.send(reservations);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });
@@ -95,6 +98,7 @@ router.get('/confirmed', async (req, res, next) => {
     });
     res.send(reservations);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });
@@ -117,6 +121,7 @@ router.get('/declined', async (req, res, next) => {
     });
     res.send(reservations);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });

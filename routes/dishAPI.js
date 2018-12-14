@@ -23,6 +23,7 @@ router.get('/', async (req, res, next) => {
     }
     res.send(dish);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });
@@ -33,6 +34,7 @@ router.post('/', async (req, res, next) => {
     await Dish.query().insert(dish);
     res.sendStatus(201);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });
@@ -43,6 +45,7 @@ router.get('/:dishId', async (req, res, next) => {
     const dish = await Dish.query().where({ dishId });
     res.send(dish);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });
@@ -55,6 +58,7 @@ router.put('/:dishId', async (req, res, next) => {
     await Dish.query().patch(dish).where({ dishId: dishId });
     res.sendStatus(201);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });
@@ -66,6 +70,7 @@ router.delete('/:dishId', async (req, res, next) => {
     await Dish.query().delete().where({ dishId });
     res.sendStatus(200);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });

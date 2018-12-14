@@ -13,14 +13,6 @@ submitButton.addEventListener('click', async () => {
     console.log('OK');
     window.location.href = '/manage';
   } catch (err) {
-    const statusCode = err.response.status;
-    switch (statusCode) {
-      case 404: 
-        alert('Username does not exist');
-        break;
-      case 401: 
-        alert('Wrong password');
-        break;
-    }
+    alert(err.response.data.message);
   }
 });
