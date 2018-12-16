@@ -137,12 +137,8 @@ body {
   }
 
   .main h2 {
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-  }
-
-  .main .dish-description {
-    padding-bottom: 2rem;
   }
 }
