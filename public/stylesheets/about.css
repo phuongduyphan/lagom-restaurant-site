@@ -176,9 +176,11 @@ body {
   }
   #slide1 {
     padding-top: 0;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   #slide1 .content h2 {
-    text-align: left;
+    text-align: center;
   }
   #slide1 .content p {
     margin-top: 2rem;
@@ -188,6 +190,6 @@ body {
     padding-top: 2rem;
   }
   #slide3 {
-    padding: 8rem 0 4rem 0;
+    padding: 8rem 15px 4rem 15px;
   }
 }
