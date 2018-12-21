@@ -8,6 +8,23 @@ const { User } = require('../models/user/User');
 
 const router = express.Router();
 
+router.post('/', async (req, res, next) => {
+  try {
+    const { reservation } = req.body;
+    console.log(reservation);
+    await transaction(Reservation.knex(), async (trx) => {
+      const user = await User.query(trx).insertAndFetch(reservation.users);
+      reservation.userId = user.userId;
+      await Reservation.query(trx).insert(reservation);
+    });
+
+    res.sendStatus(201);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+});
+
 router.use(passport.authenticate('jwt', {
   session: false,
   failureRedirect: '/admin/login'
@@ -22,23 +39,6 @@ router.get('/alls/:reservationId', async (req, res, next) => {
       element.arrivalTime = moment(element.arrivalTime, 'HH:mm:ss').format('HH:mm');
     });
     res.send(reservations);
-  } catch (err) {
-    console.log(err);
-    next(err);
-  }
-});
-
-router.post('/', async (req, res, next) => {
-  try {
-    const { reservation } = req.body;
-    console.log(reservation);
-    await transaction(Reservation.knex(), async (trx) => {
-      const user = await User.query(trx).insertAndFetch(reservation.users);
-      reservation.userId = user.userId;
-      await Reservation.query(trx).insert(reservation);
-    });
-
-    res.sendStatus(201);
   } catch (err) {
     console.log(err);
     next(err);
