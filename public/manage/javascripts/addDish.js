@@ -26,7 +26,14 @@ function resetForm(form) {
     text[i].value = '';
 }
 
+function isValidForm() {
+  const dishName = document.getElementById('dish-name');
+  const dishPrice = document.getElementById('dish-price');
+  return dishName.checkValidity() && dishPrice.checkValidity();
+}
+
 submitButton.addEventListener('click', async () => {
+  if (!isValidForm()) return;
   try {
     const dish = {
       dishName: document.getElementById('dish-name').value,
@@ -37,10 +44,13 @@ submitButton.addEventListener('click', async () => {
     };
 
     const url = '/api/dishes';
+    submitButton.disabled = true;
     await axios.post(url, { dish });
     alert('Success');
     resetForm(document.getElementById('dish-form'));
+    submitButton.disabled = false;
   } catch (err) {
+    submitButton.disabled = false;
     alert('There is something wrong. Pls try again later');
   }
 });

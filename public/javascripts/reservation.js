@@ -32,7 +32,25 @@ function resetForm(form) {
     text[i].value = '';
 }
 
+function isValidForm() {
+  let reservationForm = {
+    arrivalDate: document.getElementById('arrival-date'),
+    arrivalTime: document.getElementById('arrival-time'),
+    partySize: document.getElementById('party-size'),
+    specialRequests: document.getElementById('special-requests'),
+    users: {
+      userFullName: document.getElementById('name'),
+      userPhoneNumber: document.getElementById('phone-number'),
+      userEmail: document.getElementById('email')
+    }
+  };
+  return reservationForm.arrivalDate.checkValidity() && reservationForm.arrivalTime.checkValidity() && 
+    reservationForm.partySize.checkValidity() && reservationForm.users.userFullName.checkValidity() 
+    && reservationForm.users.userPhoneNumber.checkValidity() && reservationForm.users.userEmail.checkValidity();
+}
+
 reservationButton.addEventListener('click', async () => {
+  if (!isValidForm()) return;
   try {
     let reservation = {
       arrivalDate: document.getElementById('arrival-date').value,
@@ -45,10 +63,13 @@ reservationButton.addEventListener('click', async () => {
         userEmail: document.getElementById('email').value
       }
     };
+    reservationButton.disabled = true;
     await axios.post('/api/reservations', { reservation });
     alert('Success');
     resetForm(document.getElementById('reservation-form'));
+    reservationButton.disabled = false;
   } catch (err) {
     alert('Something wrong. Try again later');
+    reservationButton.disabled = false;
   }
 });
